@@ -3,48 +3,91 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>My Personal Profile</title>
+<title>Fatima Bintu Mustapha | Software & Security</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header>
 <nav>
 <h1>FATIMA BINTU MUSTAPHA</h1>
-<ul>
+<button class="hamburger-toggle" id="menuToggle" aria-label="Toggle Navigation">
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
+<ul id="navLinks">
 <li><a href="#about">About</a></li>
-<li><a href="#projects">Projects</a></li>
+<li><a href="#projects">Projects & Focus</a></li>
 <li><a href="#contact">Contact</a></li>
 </ul>
 </nav>
 </header>
+
 <main>
 <section class="hero">
-<h2>Portfolio</h2>
-<p>Hello! my name is Fatima I am a junior  web developer and a student learning to build websites.</p>
+<h2>Software & Security Developer</h2>
+<p>Hello! My name is Fatima. I am a web developer specializing in front-end design, Python scripting, and expanding into cybersecurity and ethical hacking.</p>
 </section>
+
 <section id="about">
 <h2>About Me</h2>
-<img src="profile.jpg" alt="Profile photo of the student">
-<p>I am learning WEB DEVELOPMENT, DESIGN, Flexbox, responsive design and Git.</p>
+<img src="profile.jpg" alt="Profile photo of Fatima Bintu Mustapha">
+<p>I build responsive, user-friendly web applications with HTML, CSS, JavaScript, and React, while leveraging Python for automation and logic. I am actively expanding into web application security and offensive technical analysis.</p>
 </section>
+
 <section id="projects">
-<h2>My Interests & Projects</h2>
+<h2>My Skills & Focus Areas</h2>
 <div class="cards">
-<article class="card"><h3>Web Development</h3><p>Building structured web pages.</p></article>
-<article class="card"><h3>Design</h3><p>Styling and responsive layouts.</p></article>
-<article class="card"><h3>Git</h3><p>Tracking and sharing project changes.</p></article>
+<article class="card">
+  <h3>Web Development</h3>
+  <p>Building responsive, accessible web interfaces using clean code, standard layouts, and modern frameworks.</p>
+</article>
+
+<article class="card">
+  <h3>Python & Scripting</h3>
+  <p>Writing clean scripts for automation, data handling, logic building, and backend integration.</p>
+</article>
+
+<article class="card">
+  <h3>Cybersecurity & Ethical Hacking</h3>
+  <p>Currently expanding into network defense fundamentals, web application vulnerability assessment, and hands-on lab environments.</p>
+</article>
 </div>
 </section>
+
 <section id="contact">
-<h2>Links</h2>
-<p><a href="https://github.com/fatimaLily">My GitHub Profile</a></p>
-<p><a href="https://instagram.com/__bintu_?psln=NXg1czE3N21sbXR2&utm_source=qr">My instagram Profile</a></p>
-<p><a href= "https://www.linkedin.com/in/fatima-mustapha-5a879b384?utm_source=share_via&utm_content=profile&utm_medium=member_ios">My LinkedIn Profile</a></p>
+<h2>Connect With Me</h2>
+<p><a href="https://github.com/fatimaLily" target="_blank" rel="noopener noreferrer">My GitHub Profile</a></p>
+<p><a href="https://instagram.com/__bintu_?psln=NXg1czE3N21sbXR2&utm_source=qr" target="_blank" rel="noopener noreferrer">My Instagram Profile</a></p>
+<p><a href="https://www.linkedin.com/in/fatima-mustapha-5a879b384?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noopener noreferrer">My LinkedIn Profile</a></p>
 </section>
 </main>
+
 <footer>
-<a href= "fatimamustapha2005@gmail.com"> </a>
-<p>&copy; Copyright 2026 Fatima</p>
+<p class="footer-email">Email: <a href="mailto:fatimamustapha2005@gmail.com">fatimamustapha2005@gmail.com</a></p>
+<p>&copy; Copyright <span id="year"></span> Fatima Bintu Mustapha. All rights reserved.</p>
 </footer>
+
+<script>
+// Dynamic Copyright Year Script
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// Hamburger Navigation Toggle Script
+const menuToggle = document.getElementById('menuToggle');
+const navLinks = document.getElementById('navLinks');
+
+menuToggle.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+  menuToggle.classList.toggle('open');
+});
+
+// Close mobile navigation menu after clicking a link
+document.querySelectorAll('#navLinks a').forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('active');
+    menuToggle.classList.remove('open');
+  });
+});
+</script>
 </body>
 </html>
